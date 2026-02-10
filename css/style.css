@@ -408,7 +408,7 @@ nav a {
 /* 420px and down: even tighter hero + team */
 @media (max-width: 420px) {
   .hero h1 {
-    padding: 40px;
+    padding: 20px;
     font-size: 56px;
   }
 
