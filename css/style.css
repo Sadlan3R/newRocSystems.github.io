@@ -1,0 +1,422 @@
+/* =========================================================
+   1) RESET + BASE
+   ========================================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+/* =========================================================
+   2) TYPOGRAPHY
+   ========================================================= */
+
+h1, h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  margin: 2rem 0;
+  line-height: 1.2;
+  color: #000;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: #000;
+}
+
+h4 { font-size: 1.5rem; }
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* =========================================================
+   3) HEADER + NAV
+   ========================================================= */
+
+header {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5rem;
+}
+
+.logo a img {
+  display: block;
+  width: 160px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-flex;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #000;
+}
+
+
+/* =========================================================
+   4) HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  background: url(../assets/header.jpg) no-repeat center bottom / cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  color: #fff;
+  padding: 1rem;
+  font-size: 112px;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero h1 span { color: #e02f2f; }
+
+
+.hero--small {
+  padding: 0px;
+}
+/* =========================================================
+   5) BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-block;
+  margin: 36px 10px;
+  padding: 12px 25px;
+  font-weight: 600;
+  color: #fff;
+  background: #e02f2f;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color .3s ease, color .25s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #e02f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,1);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+}
+
+.text-link:hover { text-decoration: underline; }
+
+/* =========================================================
+   6) SPLIT SECTION (TEXT + IMAGE)
+   ========================================================= */
+
+.split-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-text,
+.split-image {
+  flex: 1;
+  min-width: 0;
+}
+
+.split-text { padding: 5rem; }
+
+.split-image {
+  display: flex;
+  padding: 5rem;
+}
+
+.split-image img {
+  align-self: center;
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* =========================================================
+   7) QUOTE SECTION
+   ========================================================= */
+
+.quote-section {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+}
+
+/* =========================================================
+   8) FEATURE / PRODUCT CARDS (GRID)
+   ========================================================= */
+
+.card-section {
+  margin: 5rem;
+}
+
+.card-section h2 { text-align: center; }
+
+.feature-cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.card h4 { margin: 1rem 0; }
+
+.card ul {
+  list-style: disc;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card .btn {
+  margin: auto auto 0 0;
+}
+
+/* =========================================================
+   9) TESTIMONIALS
+   ========================================================= */
+
+.testimonials { margin: 2rem 5rem; }
+
+/* =========================================================
+   10) TEAM (HORIZONTAL SCROLLER)
+   ========================================================= */
+
+.team-section {
+  padding: 4rem 1rem;
+  margin: 0 5rem;
+}
+
+.team-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.team-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 1rem 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.team-scroll .card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+}
+
+.team-scroll .card img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* IMPORTANT:
+   Remove this old rule if you still have it anywhere:
+   .team-section img { aspect-ratio: 1/1; ... }
+   It conflicts with the team carousel image sizing.
+*/
+
+.team-scroll::-webkit-scrollbar { height: 5px; }
+.team-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+/* =========================================================
+   11) FOOTER
+   ========================================================= */
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 5rem;
+}
+
+.footer h5 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer a:hover { text-decoration: underline; }
+
+.socials {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.socials img { width: 24px; height: 24px; }
+
+.socials a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer-menu ul { list-style: none; padding: 0; margin: 0; }
+.footer-menu li { margin-bottom: 8px; }
+
+/* =========================================================
+   12) MAP
+   ========================================================= */
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* =========================================================
+   13) RESPONSIVE
+   ========================================================= */
+
+/* 1200px and down: tighten big side paddings */
+@media (max-width: 1200px) {
+  header { padding: 10px 2.5rem; }
+  .card-section { margin: 4rem 2.5rem; }
+  .testimonials { margin: 0 2.5rem; }
+  .team-section { margin: 0 2.5rem; }
+}
+
+/* 900px and down: split section stacks */
+@media (max-width: 900px) {
+  .split-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .split-text,
+  .split-image { padding: 2rem; }
+
+  .split-image img { max-width: 100%; }
+
+  header { padding: 10px 2rem; }
+}
+
+/* 768px and down: footer stacks, headings shrink a bit */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  h1, h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.5rem; }
+
+  .card-section { margin: 3.5rem 1.5rem; }
+  .testimonials { margin: 1rem 1.5rem; }
+  .team-section { margin: 0 1.5rem; }
+}
+
+/* 600px and down: mobile nav hidden, hero text reduced, team cards wider */
+@media (max-width: 600px) {
+  nav { display: none; }
+
+  .hero h1 {
+    padding: 40px;
+    font-size: 72px;
+  }
+
+  h1, h2 { font-size: 2rem; }
+  h3 { font-size: 1.25rem; }
+
+  /* Team: make one card feel “full width” and reduce image height */
+  .team-scroll {
+    padding: 0 0.75rem 1rem;
+    gap: 1rem;
+  }
+
+  .team-scroll .card {
+    flex: 0 0 50vw;   /* wider than 75vw; shows mostly 1 card */
+  }
+
+  .team-scroll .card img { height: 240px; }
+
+  .map-container iframe { height: 400px; width: 400px;}
+}
+
+/* 420px and down: even tighter hero + team */
+@media (max-width: 420px) {
+  .hero h1 {
+    padding: 40px;
+    font-size: 56px;
+  }
+
+
+  .team-scroll .card { flex-basis: 60vw; }
+  .team-scroll .card h4{ font-size: 1.15rem;;}
+  .team-scroll .card p{ font-size: 1rem;;}
+  .team-scroll .card img { height: 220px; }
+
+  .map-container iframe { height: 300px; width: 300px;}
+}
